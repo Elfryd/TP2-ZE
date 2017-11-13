@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>age</th>
+            <th>visible</th>
+            <th>createdAt</th>
+            <th>color</th>
+        </tr>
+        {% for person in tabPersons %}
+            <tr>
+                <td>{{person.id}}</td>
+                <td>{{person.name}}</td>
+                <td>{{person.age}}</td>
+                <td>{{person.visible}}</td>
+                <td>{{person.createdAt|date('d/m/Y')}}</td>
+                <td>{{person.color}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock body %}
