@@ -8,8 +8,9 @@
  */
 namespace  App\Controller;
 
+use App\Entity\Inventory;
 use App\Entity\Person;
-use App\Form\PersonType;
+use App\Form\InventoryType;
 use Doctrine\ORM\Mapping\Entity;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -23,47 +24,46 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 
-class PersonController extends Controller
+class InventoryController extends Controller
 {
 
     /**
      * @return Response
-     * @Route("/person/new", name="app_person_new")
+     * @Route("/inventory/new", name="app_inventory_new")
      */
     public function new_(Request $request) { //persist
-        $person = new Person();
-        $form = $this->createForm(PersonType::class, $person);
+        $inventory = new Inventory();
+        $form = $this->createForm(InventoryType::class, $inventory);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid())
         {
-            echo 'Ca a marché !!!';
             $em = $this->getDoctrine()->getManager();
-            $em->persist($person);
+            $em->persist($inventory);
             $em->flush();
-            return $this->redirectToRoute('app_person_index');
+            return $this->redirectToRoute('app_inventory_index');
         }
-        return $this->render('person/person_new.html.twig',array('form' => $form->createView()));
+        return $this->render('inventory/inventory_new.html.twig',array('form' => $form->createView()));
     }
 
     /**
      * @return Response
-     * @Route("/person/show/{id}", name="app_person_show")
+     * @Route("/inventory/show/{id}", name="app_inventory_show")
      */
     public function show($id) {
         $em = $this->getDoctrine()->getManager();
-        $repo = $em->getRepository(Person::class);
-        $person = $repo->find($id);
-        return $this->render('person/person_show.html.twig',array('person' => $person));
+        $repo = $em->getRepository(Inventory::class);
+        $inventory = $repo->find($id);
+        return $this->render('inventory/inventory_show.html.twig',array('inventory' => $inventory));
     }
 
     /**
      * @return Response
-     * @Route("/person/index", name="app_person_index")
+     * @Route("/inventory/index", name="app_inventory_index")
      */
     public function index() { //list
         $em = $this->getDoctrine()->getManager();
         $repo = $em->getRepository(Person::class);
-        $tabPersons = $repo->findAll();
-        return $this->render('person/person_index.html.twig',array('tabPersons' => $tabPersons));
+        $tabInventory = $repo->findAll();
+        return $this->render('inventory/inventory_index.html.twig',array('tabInventory' => $tabInventory));
     }
 }

@@ -4,19 +4,15 @@
         <tr>
             <th>id</th>
             <th>name</th>
-            <th>age</th>
-            <th>visible</th>
-            <th>createdAt</th>
-            <th>color</th>
+            <th>max_weight</th>
+            <th>show</th>
         </tr>
         {% for person in tabPersons %}
             <tr>
                 <td>{{person.id}}</td>
                 <td>{{person.name}}</td>
-                <td>{{person.age}}</td>
-                <td>{{person.visible}}</td>
-                <td>{{person.createdAt|date('d/m/Y')}}</td>
-                <td>{{person.color}}</td>
+                <td>{{person.maxweight}}</td>
+                <td><a href={{ path('app_person_show',{'id' : person.id}) }}><button>show</button></a></td>
             </tr>
         {% endfor %}
     </table>

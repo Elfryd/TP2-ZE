@@ -1,23 +1,22 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: geoffrey.polan
- * Date: 13/11/17
- * Time: 14:09
+ * Date: 20/11/17
+ * Time: 13:17
  */
+
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Class Person
+ * Class Material
  * @package App\Entity
  * @ORM\Entity
- * @ORM\Table(name="person")
+ * @ORM\Table(name="material")
  */
-class Person
+class Material
 {
     /**
      * @var int
@@ -28,25 +27,14 @@ class Person
     protected $id;
     /**
      * @var string
-     * @ORM\Column(type="string",length=40)
+     * @ORM\Column(type="string", length=40)
      */
     protected $name;
     /**
-     * @var int
-     * @ORM\Column(type="decimal")
+     * @var float
+     * @ORM\Column(type="float")
      */
-    protected $max_weight;
-
-    /**
-     * @var Inventory[]
-     * @ORM\OneToMany(targetEntity="Inventory",mappedBy="person")
-     */
-    protected $inventories;
-
-    public function __construct()
-    {
-        $this->inventories = new ArrayCollection();
-    }
+    protected $weight;
 
     /**
      * @return int
@@ -81,23 +69,25 @@ class Person
     }
 
     /**
-     * @return int
+     * @return float
      */
-    public function getMaxWeight()
+    public function getWeight()
     {
-        return $this->max_weight;
+        return $this->weight;
     }
 
     /**
-     * @param int $max_weight
+     * @param float $weight
      */
-    public function setMaxWeight($max_weight)
+    public function setWeight($weight)
     {
-        $this->max_weight = $max_weight;
+        $this->weight = $weight;
     }
 
     public function __toString()
     {
         return $this->name;
     }
+
+
 }
