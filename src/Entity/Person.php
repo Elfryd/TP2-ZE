@@ -96,6 +96,22 @@ class Person
         $this->max_weight = $max_weight;
     }
 
+    /**
+     * @return Inventory[]
+     */
+    public function getInventories()
+    {
+        return $this->inventories;
+    }
+
+    /**
+     * @param Inventory[] $inventories
+     */
+    public function setInventories($inventories)
+    {
+        $this->inventories = $inventories;
+    }
+
     public function __toString()
     {
         return $this->name;
