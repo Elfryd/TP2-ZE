@@ -1,6 +1,21 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <div>{{inventory.person}}</div>
-    <div>{{inventory.material}}</div>
-    <div>{{inventory.numberofitem}}</div>
+    <h1>id : {{ inventory.id }}</h1>
+    <div>
+        <h2>{{ inventory.material }}</h2>
+        <ul>
+            <li><strong>name : {{ inventory.material.name }}</strong></li>
+            <li><strong>weight : {{ inventory.material.weight }}</strong></li>
+        </ul>
+    </div>
+    <div>
+        <h2>{{ inventory.person }}</h2>
+    <ul>
+        <li><strong>name : {{ inventory.person.name }}</strong></li>
+        <li><strong>max_weight : {{ inventory.person.maxweight }}</strong></li>
+    </ul>
+    </div>
+    <div>
+    <strong>number_of_item : {{ inventory.numberofitem }}</strong>
+    </div>
 {% endblock body %}

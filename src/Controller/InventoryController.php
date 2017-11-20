@@ -62,8 +62,8 @@ class InventoryController extends Controller
      */
     public function index() { //list
         $em = $this->getDoctrine()->getManager();
-        $repo = $em->getRepository(Person::class);
+        $repo = $em->getRepository(Inventory::class);
         $tabInventory = $repo->findAll();
-        return $this->render('inventory/inventory_index.html.twig',array('tabInventory' => $tabInventory));
+        return $this->render('inventory/inventory_index.html.twig',array('tabInventories' => $tabInventory));
     }
 }
