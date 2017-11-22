@@ -26,4 +26,15 @@ class PlayerController extends Controller
 
         return $this->render('player/player_index.html.twig', ['players' => $players]);
     }
+
+    /**
+     * @Route(path="player/index/reset", name="reset_list_player")
+     */
+    public function resetPlayers() {
+        $players = $this->getDoctrine()->getRepository(Player::class)->findAll();
+        foreach ($players as $player) {
+            $player->setHealthPoint(100);
+        }
+        return $this->redirectToRoute('player_list');
+    }
 }

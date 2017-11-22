@@ -10,9 +10,20 @@
 namespace App\Fight;
 
 
+use App\Entity\Player;
+
 class Fight
 {
+    /**
+     * @var Player
+     */
     public $player;
+    /**
+     * @var int
+     */
     public $distance;
+    /**
+     * @var Player
+     */
     public $target;
 }

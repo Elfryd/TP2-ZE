@@ -37,6 +37,7 @@ class FightType extends AbstractType
                 'multiple' => false,
                 'expanded' => false,
             ]
-            );
+            )
+            ->add('save', SubmitType::class, array('label' => 'Go'));
     }
 }
