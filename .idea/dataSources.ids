@@ -725,7 +725,7 @@ album_id</columns>
       </key>
       <foreign-key id="202" parent="29" name="riviere_ibfk_1">
         <columns>id_riviere</columns>
-        <ref-key>PRIMARY</ref-key>
+        <ref-key>~.Personne.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
