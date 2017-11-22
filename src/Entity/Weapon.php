@@ -38,7 +38,7 @@ class Weapon
      * @var float
      * @ORM\Column(type="decimal")
      */
-    protected $damageDistanceCoeff;
+    protected $damageDistanceCoef;
     /**
      * @var int
      * @ORM\Column(type="integer")
@@ -49,14 +49,14 @@ class Weapon
      * Weapon constructor.
      * @param string $name
      * @param int $damage
-     * @param float $damageDistanceCoeff
+     * @param float $damageDistanceCoef
      * @param int $fireRate
      */
-    public function __construct($name, $damage, $damageDistanceCoeff, $fireRate)
+    public function __construct($name, $damage, $damageDistanceCoef, $fireRate)
     {
         $this->name = $name;
         $this->damage = $damage;
-        $this->damageDistanceCoeff = $damageDistanceCoeff;
+        $this->damageDistanceCoef = $damageDistanceCoef;
         $this->fireRate = $fireRate;
     }
 
@@ -88,9 +88,9 @@ class Weapon
     /**
      * @return float
      */
-    public function getDamageDistanceCoeff()
+    public function getDamageDistanceCoef()
     {
-        return $this->damageDistanceCoeff;
+        return $this->damageDistanceCoef;
     }
 
     /**

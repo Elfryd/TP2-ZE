@@ -36,7 +36,7 @@ class Player
     protected $healthPoint = 100;
     /**
      * @var Weapon
-     * @ORM\ManyToOne(targetEntity="weapon")
+     * @ORM\ManyToOne(targetEntity="Weapon")
      */
     protected $currentWeapon;
 
