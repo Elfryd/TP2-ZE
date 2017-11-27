@@ -1,8 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {#<a href="{{ path('player_new') }}">Create player</a>#}
-
+    {#<a href="{{ path('player_new') }}">Create player</a>
     <table>
         <thead>
         <th>Status</th>
@@ -27,5 +26,18 @@
         {% endfor %}
         </tbody>
     </table>
-    <a href={{ path('reset_list_player') }}><button>God Heal</button></a>
+    <a href={{ path('reset_list_player') }}><button>God Heal</button></a>#}
+    <table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+        </tr>
+        {% for player in tabPlayers %}
+            <tr>
+                <td>{{player.id}}</td>
+                <td>{{player.name}}</td>
+                <td><a href={{ path('app_player_show',{'id' : player_item.id}) }}><button>show</button></a></td>
+            </tr>
+        {% endfor %}
+    </table>
 {% endblock %}

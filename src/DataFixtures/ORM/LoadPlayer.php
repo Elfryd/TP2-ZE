@@ -34,7 +34,7 @@ class LoadPlayer extends Fixture
         foreach ($players as $name => $weapon) {
             $player = new Player();
             $player->setName($name);
-            $player->setCurrentWeapon($this->getReference($weapon));
+            //$player->setCurrentWeapon($this->getReference($weapon));
             $manager->persist($player);
         }
         $manager->flush();

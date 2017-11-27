@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block title %}Création d'un Matériel{% endblock %}
 {% block body %}
+    {{ include('menu_item.html.twig')  }}
     <div>
     {{ form_start(form) }}
     {{ form_widget(form) }}

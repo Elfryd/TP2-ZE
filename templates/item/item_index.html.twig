@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {{ include('menu_item.html.twig')  }}
+    <table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>type_item</th>
+            <th>show</th>
+        </tr>
+        {% for item in tabItems %}
+            <tr>
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.type_item}}</td>
+                <td><a href={{ path('app_item_show',{'id' : item.id}) }}><button>show</button></a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock body %}
