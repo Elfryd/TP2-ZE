@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block body %}
+    {{ include('player_item/menu_player_item.html.twig')  }}
     <div><strong>{{player_item.id}}</strong></div>
     <div><strong>{{player_item.position}}</strong></div>
     <div><strong>{{player_item.created_at}}</strong></div>

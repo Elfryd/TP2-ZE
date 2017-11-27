@@ -11,6 +11,7 @@ namespace App\Controller;
 use App\Entity\PlayerItem;
 use App\Form\PlayerItemType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 

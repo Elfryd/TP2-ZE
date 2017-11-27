@@ -36,7 +36,7 @@
             <tr>
                 <td>{{player.id}}</td>
                 <td>{{player.name}}</td>
-                <td><a href={{ path('app_player_show',{'id' : player_item.id}) }}><button>show</button></a></td>
+                <td><a href={{ path('app_player_show',{'id' : player.id}) }}><button>show</button></a></td>
             </tr>
         {% endfor %}
     </table>
