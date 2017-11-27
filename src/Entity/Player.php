@@ -14,6 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Class Player
  * @package App\Entity
  * @ORM\Entity
+ * @ORM\Table(name="player")
  */
 class Player
 {
@@ -29,16 +30,17 @@ class Player
      * @ORM\Column(type="string", length=40)
      */
     protected $name;
-    /**
-     * @var int
-     * @ORM\Column(type="integer")
-     */
-    protected $healthPoint = 100;
-    /**
-     * @var Weapon
-     * @ORM\ManyToOne(targetEntity="Weapon")
-     */
-    protected $currentWeapon;
+
+//    /**
+//     * @var int
+//     * @ORM\Column(type="integer")
+//     */
+//    protected $healthPoint = 100;
+//    /**
+//     * @var Weapon
+//     * @ORM\ManyToOne(targetEntity="Weapon")
+//     */
+//    protected $currentWeapon;
 
     /**
      * @return int
@@ -72,37 +74,37 @@ class Player
         $this->name = $name;
     }
 
-    /**
-     * @return int
-     */
-    public function getHealthPoint()
-    {
-        return $this->healthPoint;
-    }
-
-    /**
-     * @param int $healthPoint
-     */
-    public function setHealthPoint($healthPoint)
-    {
-        $this->healthPoint = $healthPoint;
-    }
-
-    /**
-     * @return Weapon
-     */
-    public function getCurrentWeapon()
-    {
-        return $this->currentWeapon;
-    }
-
-    /**
-     * @param Weapon $currentWeapon
-     */
-    public function setCurrentWeapon($currentWeapon)
-    {
-        $this->currentWeapon = $currentWeapon;
-    }
+//    /**
+//     * @return int
+//     */
+//    public function getHealthPoint()
+//    {
+//        return $this->healthPoint;
+//    }
+//
+//    /**
+//     * @param int $healthPoint
+//     */
+//    public function setHealthPoint($healthPoint)
+//    {
+//        $this->healthPoint = $healthPoint;
+//    }
+//
+//    /**
+//     * @return Weapon
+//     */
+//    public function getCurrentWeapon()
+//    {
+//        return $this->currentWeapon;
+//    }
+//
+//    /**
+//     * @param Weapon $currentWeapon
+//     */
+//    public function setCurrentWeapon($currentWeapon)
+//    {
+//        $this->currentWeapon = $currentWeapon;
+//    }
 
 
 }
