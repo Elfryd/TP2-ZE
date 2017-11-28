@@ -10,11 +10,11 @@ namespace App\Form;
 
 use App\Entity\Player;
 use App\Entity\Item;
-use Doctrine\DBAL\Types\IntegerType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
@@ -36,13 +36,13 @@ class PlayerItemType extends AbstractType
             ->add('player', EntityType::class, [
                 'class' => Player::class,
                 'choice_label' => 'name',
-                'multiple' => true,
+                'multiple' => false,
                 'expanded' => false,
             ])
             ->add('item', EntityType::class, [
                 'class' => Item::class,
                 'choice_label' => 'name',
-                'multiple' => true,
+                'multiple' => false,
                 'expanded' => false,
             ])
             ->add('position', IntegerType::class)

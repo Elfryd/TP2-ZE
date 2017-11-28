@@ -11,7 +11,7 @@
         {% for player_item in tabPlayerItems %}
             <tr>
                 <td>{{player_item.id}}</td>
-                <td>{{player_item.created_at}}</td>
+                <td>{{player_item.createdat|date("Y/m/d")}}</td>
                 <td>{{player_item.position}}</td>
                 <td><a href={{ path('app_player_item_show',{'id' : player_item.id}) }}><button>show</button></a></td>
             </tr>
