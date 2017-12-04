@@ -31,7 +31,8 @@ class ItemController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($item);
             $em->flush();
-            return $this->redirectToRoute('app_item_index');
+            var_dump($item);
+            //return $this->redirectToRoute('app_item_index');
         }
         return $this->render('item/item_new.html.twig',array('form' => $form->createView()));
     }

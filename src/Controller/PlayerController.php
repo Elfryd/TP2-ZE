@@ -8,6 +8,7 @@
 
 namespace App\Controller;
 
+use App\Form\PlayerType;
 use App\Entity\Player;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,6 +18,44 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PlayerController extends Controller
 {
+    /**
+     * @return Response
+     * @Route("/player/new", name="app_player_new")
+     */
+    public function new_(Request $request) { //persist
+        $player = $this->get(\App\Entity\Player::class);
+        $form = $this->createForm(PlayerType::class, $player);
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid())
+        {
+            echo 'Ca a marché !!!';
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($player);
+            $em->flush();
+            return $this->redirectToRoute('app_player_index');
+        }
+        return $this->render('player/player_new.html.twig',array('form' => $form->createView()));
+    }
+
+    /**
+     * @return Response
+     * @Route("/player/edit/{id}", name="app_player_edit")
+     */
+    public function edit($id, Request $request) {
+        $player = $this->getDoctrine()->getManager()->getRepository(\App\Entity\Player::class)->find($id);
+        $form = $this->createForm(PlayerType::class, $player);
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid())
+        {
+            echo 'Ca a marché !!!';
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($player);
+            $em->flush();
+            return $this->redirectToRoute('app_player_index');
+        }
+        return $this->render('player/player_edit.html.twig',array('form' => $form->createView()));
+    }
+
     /**
      * @return Response
      * @Route("/player/index", name="app_player_index")
