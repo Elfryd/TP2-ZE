@@ -8,7 +8,6 @@
 
 namespace App;
 
-
 final class AppEvent
 {
     const PLAYER_ADD = 'app.player.add';

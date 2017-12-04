@@ -32,6 +32,7 @@ class PlayerController extends Controller
             $playerEvent = $this->get('app.player.event');
             $playerEvent->setPlayer($player);
             $dispatcher = $this->get('event_dispatcher');
+            var_dump(AppEvent::PLAYER_ADD);
             $dispatcher->dispatch(AppEvent::PLAYER_ADD, $playerEvent);
             return $this->redirectToRoute('app_player_index');
         }

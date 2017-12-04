@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - geoffreypolan@ipabdd.iut-lens.univ-artois.fr">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="geoffreypolan">
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="geoffreypolan1"/>
+    <schema id="4" parent="1" name="geoffreypolan2"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <table id="6" parent="2" name="Personne"/>
+    <table id="7" parent="2" name="absences"/>
+    <table id="8" parent="2" name="album"/>
+    <table id="9" parent="2" name="albums"/>
+    <table id="10" parent="2" name="artiste_instrument"/>
+    <table id="11" parent="2" name="artistes"/>
+    <table id="12" parent="2" name="border"/>
+    <table id="13" parent="2" name="concepteurs"/>
+    <table id="14" parent="2" name="enseignants"/>
+    <table id="15" parent="2" name="epreuves"/>
+    <table id="16" parent="2" name="etudiants"/>
+    <table id="17" parent="2" name="film"/>
+    <table id="18" parent="2" name="genre"/>
+    <table id="19" parent="2" name="genres"/>
+    <table id="20" parent="2" name="instruments"/>
+    <table id="21" parent="2" name="joue"/>
+    <table id="22" parent="2" name="matieres"/>
+    <table id="23" parent="2" name="mer"/>
+    <table id="24" parent="2" name="morceaux"/>
+    <table id="25" parent="2" name="notes"/>
+    <table id="26" parent="2" name="nova_roles"/>
+    <table id="27" parent="2" name="nova_users"/>
+    <table id="28" parent="2" name="participes"/>
+    <table id="29" parent="2" name="pays"/>
+    <table id="30" parent="2" name="persons"/>
+    <table id="31" parent="2" name="riviere"/>
+    <table id="32" parent="2" name="station"/>
+    <table id="33" parent="2" name="statistique"/>
+    <table id="34" parent="2" name="story_aime"/>
+    <table id="35" parent="2" name="story_commentaire"/>
+    <table id="36" parent="2" name="story_histoire"/>
+    <table id="37" parent="2" name="story_image"/>
+    <table id="38" parent="2" name="story_roles"/>
+    <table id="39" parent="2" name="story_users"/>
+    <table id="40" parent="2" name="tache"/>
+    <table id="41" parent="2" name="ville"/>
+    <table id="42" parent="2" name="voisin"/>
+    <column id="43" parent="6" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="44" parent="6" name="nom">
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="6" name="prenom">
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="46" parent="6" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="47" parent="7" name="epreuve_id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="7" name="etudiant_id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="49" parent="7" name="IDX_F9C0EFFFAB990336">
+      <ColNames>epreuve_id</ColNames>
+    </index>
+    <index id="50" parent="7" name="IDX_F9C0EFFFDDEAB1A3">
+      <ColNames>etudiant_id</ColNames>
+    </index>
+    <key id="51" parent="7" name="PRIMARY">
+      <ColNames>epreuve_id
+etudiant_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="52" parent="7" name="FK_F9C0EFFFAB990336">
+      <ColNames>epreuve_id</ColNames>
+      <RefTableName>epreuves</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="53" parent="7" name="FK_F9C0EFFFDDEAB1A3">
+      <ColNames>etudiant_id</ColNames>
+      <RefTableName>etudiants</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="54" parent="8" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="55" parent="8" name="titre">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="8" name="annee">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="57" parent="8" name="nbVentes">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="58" parent="8" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="59" parent="9" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="60" parent="9" name="genre_id">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="61" parent="9" name="titre">
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="9" name="annee">
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="9" name="label">
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="64" parent="9" name="IDX_F4E2474F4296D31F">
+      <ColNames>genre_id</ColNames>
+    </index>
+    <key id="65" parent="9" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="66" parent="9" name="FK_F4E2474F4296D31F">
+      <ColNames>genre_id</ColNames>
+      <RefTableName>genres</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="67" parent="10" name="artiste_id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="10" name="instrument_id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="69" parent="10" name="IDX_88D0F18721D25844">
+      <ColNames>artiste_id</ColNames>
+    </index>
+    <index id="70" parent="10" name="IDX_88D0F187CF11D9C">
+      <ColNames>instrument_id</ColNames>
+    </index>
+    <key id="71" parent="10" name="PRIMARY">
+      <ColNames>artiste_id
+instrument_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="72" parent="10" name="FK_88D0F18721D25844">
+      <ColNames>artiste_id</ColNames>
+      <RefTableName>artistes</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>delete</OnDelete>
+    </foreign-key>
+    <foreign-key id="73" parent="10" name="FK_88D0F187CF11D9C">
+      <ColNames>instrument_id</ColNames>
+      <RefTableName>instruments</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>delete</OnDelete>
+    </foreign-key>
+    <column id="74" parent="11" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="75" parent="11" name="nom">
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="76" parent="11" name="prenom">
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="77" parent="11" name="ddn">
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="78" parent="11" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="79" parent="12" name="id_mer">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="80" parent="12" name="id_pays">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="81" parent="12" name="id_pays">
+      <ColNames>id_pays</ColNames>
+    </index>
+    <key id="82" parent="12" name="PRIMARY">
+      <ColNames>id_mer
+id_pays</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="83" parent="12" name="border_ibfk_1">
+      <ColNames>id_mer</ColNames>
+      <RefTableName>mer</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="84" parent="12" name="border_ibfk_2">
+      <ColNames>id_pays</ColNames>
+      <RefTableName>pays</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="85" parent="13" name="artiste_id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="86" parent="13" name="album_id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="87" parent="13" name="IDX_1CA15DB21137ABCF">
+      <ColNames>album_id</ColNames>
+    </index>
+    <index id="88" parent="13" name="IDX_1CA15DB221D25844">
+      <ColNames>artiste_id</ColNames>
+    </index>
+    <key id="89" parent="13" name="PRIMARY">
+      <ColNames>artiste_id
+album_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="90" parent="13" name="FK_1CA15DB221D25844">
+      <ColNames>artiste_id</ColNames>
+      <RefTableName>artistes</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="91" parent="13" name="FK_1CA15DB21137ABCF">
+      <ColNames>album_id</ColNames>
+      <RefTableName>albums</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="92" parent="14" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="93" parent="14" name="nom">
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="94" parent="14" name="prenom">
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="95" parent="14" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="96" parent="15" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="97" parent="15" name="enseignant_id">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="98" parent="15" name="matiere_id">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="99" parent="15" name="libelle">
+      <DataType>varchar(60)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="100" parent="15" name="dateCompose">
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="101" parent="15" name="coefficient">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="102" parent="15" name="note">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="103" parent="15" name="IDX_DB620E42E455FCC0">
+      <ColNames>enseignant_id</ColNames>
+    </index>
+    <index id="104" parent="15" name="IDX_DB620E42F46CD258">
+      <ColNames>matiere_id</ColNames>
+    </index>
+    <key id="105" parent="15" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="106" parent="15" name="FK_DB620E42E455FCC0">
+      <ColNames>enseignant_id</ColNames>
+      <RefTableName>enseignants</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="107" parent="15" name="FK_DB620E42F46CD258">
+      <ColNames>matiere_id</ColNames>
+      <RefTableName>matieres</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="108" parent="16" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="109" parent="16" name="nom">
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="110" parent="16" name="prenom">
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="111" parent="16" name="numero">
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="112" parent="16" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="113" parent="17" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="114" parent="17" name="titre">
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="115" parent="17" name="annee">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="116" parent="17" name="nbSpectateurs">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="117" parent="17" name="idRealisateur">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="118" parent="17" name="idGenre">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="119" parent="17" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="120" parent="18" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="121" parent="18" name="type">
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <key id="122" parent="18" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="123" parent="19" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="124" parent="19" name="nom">
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="125" parent="19" name="annee">
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="126" parent="19" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="127" parent="20" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="128" parent="20" name="nom">
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="129" parent="20" name="categorie">
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="130" parent="20" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="131" parent="21" name="idActeur">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="132" parent="21" name="idFilm">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="133" parent="21" name="salaire">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="134" parent="22" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="135" parent="22" name="nomLong">
+      <DataType>varchar(120)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="136" parent="22" name="nomCourt">
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="137" parent="22" name="unit_enseignement">
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="138" parent="22" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="139" parent="23" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="140" parent="23" name="nom">
+      <DataType>varchar(250)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="141" parent="23" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="142" parent="24" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="143" parent="24" name="album_id">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="144" parent="24" name="titre">
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="145" parent="24" name="numero">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="146" parent="24" name="duree">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="147" parent="24" name="IDX_823125C31137ABCF">
+      <ColNames>album_id</ColNames>
+    </index>
+    <key id="148" parent="24" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="149" parent="24" name="FK_823125C31137ABCF">
+      <ColNames>album_id</ColNames>
+      <RefTableName>albums</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="150" parent="25" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="151" parent="25" name="epreuve_id">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="152" parent="25" name="etudiant_id">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="153" parent="25" name="valeur">
+      <DataType>decimal(5,3)|0</DataType>
+    </column>
+    <column id="154" parent="25" name="etat">
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="155" parent="25" name="IDX_11BA68CAB990336">
+      <ColNames>epreuve_id</ColNames>
+    </index>
+    <index id="156" parent="25" name="IDX_11BA68CDDEAB1A3">
+      <ColNames>etudiant_id</ColNames>
+    </index>
+    <key id="157" parent="25" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="158" parent="25" name="FK_11BA68CAB990336">
+      <ColNames>epreuve_id</ColNames>
+      <RefTableName>epreuves</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="159" parent="25" name="FK_11BA68CDDEAB1A3">
+      <ColNames>etudiant_id</ColNames>
+      <RefTableName>etudiants</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="160" parent="26" name="id">
+      <DataType>int(11) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="161" parent="26" name="name">
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="162" parent="26" name="slug">
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="163" parent="26" name="description">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="164" parent="26" name="created_at">
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <column id="165" parent="26" name="updated_at">
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <key id="166" parent="26" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="167" parent="27" name="id">
+      <DataType>int(11) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="168" parent="27" name="role_id">
+      <DataType>int(11) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="169" parent="27" name="username">
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="170" parent="27" name="password">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="171" parent="27" name="realname">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="172" parent="27" name="email">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="173" parent="27" name="active">
+      <DataType>tinyint(4) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="174" parent="27" name="activation_code">
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="175" parent="27" name="remember_token">
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="176" parent="27" name="created_at">
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <column id="177" parent="27" name="updated_at">
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <key id="178" parent="27" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="179" parent="28" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="180" parent="28" name="artiste_id">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="181" parent="28" name="morceau_id">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="182" parent="28" name="role">
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="183" parent="28" name="IDX_9AB9266E21D25844">
+      <ColNames>artiste_id</ColNames>
+    </index>
+    <index id="184" parent="28" name="IDX_9AB9266E29E8E5CE">
+      <ColNames>morceau_id</ColNames>
+    </index>
+    <key id="185" parent="28" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="186" parent="28" name="FK_9AB9266E21D25844">
+      <ColNames>artiste_id</ColNames>
+      <RefTableName>artistes</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="187" parent="28" name="FK_9AB9266E29E8E5CE">
+      <ColNames>morceau_id</ColNames>
+      <RefTableName>morceaux</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="188" parent="29" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="189" parent="29" name="nom">
+      <DataType>varchar(250)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="190" parent="29" name="superficie">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="191" parent="29" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="192" parent="30" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="193" parent="30" name="name">
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="194" parent="30" name="age">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="195" parent="30" name="visible">
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="196" parent="30" name="created_at">
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="197" parent="30" name="color">
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="198" parent="30" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="199" parent="31" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="200" parent="31" name="nom">
+      <DataType>varchar(250)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="201" parent="31" name="longueur">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="202" parent="31" name="id_riviere">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="203" parent="31" name="id_mer">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="204" parent="31" name="id_mer">
+      <ColNames>id_mer</ColNames>
+    </index>
+    <index id="205" parent="31" name="id_riviere">
+      <ColNames>id_riviere</ColNames>
+    </index>
+    <key id="206" parent="31" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="207" parent="31" name="riviere_ibfk_1">
+      <ColNames>id_riviere</ColNames>
+      <RefTableName>riviere</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="208" parent="31" name="riviere_ibfk_2">
+      <ColNames>id_mer</ColNames>
+      <RefTableName>mer</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="209" parent="32" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="210" parent="32" name="num">
+      <DataType>varchar(5)|0</DataType>
+    </column>
+    <column id="211" parent="32" name="nom">
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <key id="212" parent="32" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="213" parent="33" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="214" parent="33" name="num_station">
+      <DataType>varchar(5)|0</DataType>
+    </column>
+    <column id="215" parent="33" name="la_date">
+      <DataType>date|0</DataType>
+    </column>
+    <column id="216" parent="33" name="temperature">
+      <DataType>float|0</DataType>
+    </column>
+    <column id="217" parent="33" name="pression">
+      <DataType>float|0</DataType>
+    </column>
+    <column id="218" parent="33" name="humidite">
+      <DataType>float|0</DataType>
+    </column>
+    <column id="219" parent="33" name="point_rose">
+      <DataType>float|0</DataType>
+    </column>
+    <column id="220" parent="33" name="visibilite">
+      <DataType>float|0</DataType>
+    </column>
+    <column id="221" parent="33" name="vent_moyen">
+      <DataType>float|0</DataType>
+    </column>
+    <key id="222" parent="33" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="223" parent="34" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="224" parent="34" name="idUtilisateur">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="225" parent="34" name="idHistoire">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="226" parent="34" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="227" parent="35" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="228" parent="35" name="texte">
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="229" parent="35" name="datePost">
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="230" parent="35" name="idUtilisateur">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="231" parent="35" name="idHistoire">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="232" parent="35" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="233" parent="36" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="234" parent="36" name="titre">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="235" parent="36" name="texte">
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="236" parent="36" name="idUtilisateur">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="237" parent="36" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="238" parent="37" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="239" parent="37" name="titre">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="240" parent="37" name="texte">
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="241" parent="37" name="url">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="242" parent="37" name="moment">
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="243" parent="37" name="titremoment">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="244" parent="37" name="idHistoire">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="245" parent="37" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="246" parent="38" name="id">
+      <DataType>int(11) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="247" parent="38" name="name">
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="248" parent="38" name="slug">
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="249" parent="38" name="description">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="250" parent="38" name="created_at">
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <column id="251" parent="38" name="updated_at">
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <key id="252" parent="38" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="253" parent="39" name="id">
+      <DataType>int(11) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="254" parent="39" name="role_id">
+      <DataType>int(11) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="255" parent="39" name="username">
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="256" parent="39" name="password">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="257" parent="39" name="realname">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="258" parent="39" name="email">
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="259" parent="39" name="active">
+      <DataType>tinyint(4) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="260" parent="39" name="activation_code">
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="261" parent="39" name="remember_token">
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="262" parent="39" name="created_at">
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <column id="263" parent="39" name="updated_at">
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <key id="264" parent="39" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="265" parent="40" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="266" parent="40" name="expiration">
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="267" parent="40" name="categorie">
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="268" parent="40" name="description">
+      <DataType>text|0</DataType>
+    </column>
+    <column id="269" parent="40" name="accomplie">
+      <DataType>enum(&apos;O&apos;, &apos;N&apos;)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="270" parent="40" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="271" parent="41" name="id">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="272" parent="41" name="nom">
+      <DataType>varchar(250)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="273" parent="41" name="nbHabitants">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="274" parent="41" name="id_riviere">
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="275" parent="41" name="id_pays">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="276" parent="41" name="id_pays">
+      <ColNames>id_pays</ColNames>
+    </index>
+    <index id="277" parent="41" name="id_riviere">
+      <ColNames>id_riviere</ColNames>
+    </index>
+    <key id="278" parent="41" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="279" parent="41" name="ville_ibfk_1">
+      <ColNames>id_riviere</ColNames>
+      <RefTableName>riviere</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="280" parent="41" name="ville_ibfk_2">
+      <ColNames>id_pays</ColNames>
+      <RefTableName>pays</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="281" parent="42" name="id_pays1">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="282" parent="42" name="id_pays2">
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="283" parent="42" name="id_pays2">
+      <ColNames>id_pays2</ColNames>
+    </index>
+    <key id="284" parent="42" name="PRIMARY">
+      <ColNames>id_pays1
+id_pays2</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="285" parent="42" name="voisin_ibfk_1">
+      <ColNames>id_pays1</ColNames>
+      <RefTableName>pays</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="286" parent="42" name="voisin_ibfk_2">
+      <ColNames>id_pays2</ColNames>
+      <RefTableName>pays</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
