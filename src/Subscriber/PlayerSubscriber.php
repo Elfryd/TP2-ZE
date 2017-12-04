@@ -33,6 +33,7 @@ class PlayerSubscriber implements EventSubscriberInterface
     public function playerAdd(PlayerEvent $playerEvent){
         $player = $playerEvent->getPlayer();
         $player->setCreatedAt(new \DateTime());
+        $player->setUpdatedAt(new \DateTime());
         $this->em->persist($player);
         $this->em->flush();
     }

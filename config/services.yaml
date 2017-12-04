@@ -37,11 +37,5 @@ services:
     app.player.event:
         public: true
         class: App\Event\PlayerEvent
-    event_dispatcher:
-        public: true
-        class: Symfony\Component\EventDispatcher\EventDispatcher
-    app.player.add:
-        public: true
-        class: App\Controller\PlayerController::
 
 
