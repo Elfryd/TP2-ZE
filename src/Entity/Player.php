@@ -45,24 +45,53 @@ class Player
      */
     protected $name;
     /**
-     * @var int
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank()
-     * @Assert\Range(
-     *      min = 18,
-     *      max = 99,
-     *      minMessage = "Impossible l'âge doit-être au moins de 18 ans",
-     *      maxMessage = "Impossible l'âge doit-être au plus de 99 ans"
-     * )
-     */
-    protected $age;
-    /**
      * @var string
-     * @ORM\Column(type="string")
-     * @Assert\NotBlank()
-     * @Assert\Choice({"France","Belgique"})
+     * @ORM\Column(type="string", length=40)
+     * @Assert\Choice({"ADC","JUNG","TOP","MID","SUP"})
      */
-    protected $country;
+    protected $rolesPlayer;
+    /**
+     * @var int
+     * @ORM\Column(type="integer",nullable=true)
+     */
+    protected $money;
+    /**
+     * @var int
+     * @ORM\Column(type="integer",nullable=true)
+     */
+    protected $experiences;
+    /**
+     * @var \DateTime
+     * @ORM\Column(type="datetime")
+     *
+     */
+    protected $created_at;
+    /**
+     * @var \DateTime
+     * @ORM\Column(type="datetime",nullable=true)
+     */
+    protected $updated_at;
+
+//    /**
+//     * @var int
+//     * @ORM\Column(type="integer")
+//     * @Assert\NotBlank()
+//     * @Assert\Range(
+//     *      min = 18,
+//     *      max = 99,
+//     *      minMessage = "Impossible l'âge doit-être au moins de 18 ans",
+//     *      maxMessage = "Impossible l'âge doit-être au plus de 99 ans"
+//     * )
+//     */
+//    protected $age;
+//    /**
+//     * @var string
+//     * @ORM\Column(type="string")
+//     * @Assert\NotBlank()
+//     * @Assert\Choice({"France","Belgique"})
+//     */
+//    protected $country;
+
 //    /**
 //     * @var int
 //     * @ORM\Column(type="integer")
@@ -107,36 +136,118 @@ class Player
     }
 
     /**
-     * @return int
-     */
-    public function getAge()
-    {
-        return $this->age;
-    }
-
-    /**
-     * @param int $age
-     */
-    public function setAge($age)
-    {
-        $this->age = $age;
-    }
-
-    /**
      * @return string
      */
-    public function getCountry()
+    public function getRolesPlayer()
     {
-        return $this->country;
+        return $this->rolesPlayer;
     }
 
     /**
-     * @param int $age
+     * @param string $rolesPlayer
      */
-    public function setCountry($country)
+    public function setRolesPlayer($rolesPlayer)
     {
-        $this->country = $country;
+        $this->rolesPlayer = $rolesPlayer;
     }
+
+    /**
+     * @return int
+     */
+    public function getMoney()
+    {
+        return $this->money;
+    }
+
+    /**
+     * @param int $money
+     */
+    public function setMoney($money)
+    {
+        $this->money = $money;
+    }
+
+    /**
+     * @return int
+     */
+    public function getExperiences()
+    {
+        return $this->experiences;
+    }
+
+    /**
+     * @param int $experiences
+     */
+    public function setExperiences($experiences)
+    {
+        $this->experiences = $experiences;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * @param \DateTime $created_at
+     */
+    public function setCreatedAt($created_at)
+    {
+        $this->created_at = $created_at;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     * @param \DateTime $updated_at
+     */
+    public function setUpdatedAt($updated_at)
+    {
+        $this->updated_at = $updated_at;
+    }
+
+
+
+//    /**
+//     * @return int
+//     */
+//    public function getAge()
+//    {
+//        return $this->age;
+//    }
+//
+//    /**
+//     * @param int $age
+//     */
+//    public function setAge($age)
+//    {
+//        $this->age = $age;
+//    }
+//
+//    /**
+//     * @return string
+//     */
+//    public function getCountry()
+//    {
+//        return $this->country;
+//    }
+//
+//    /**
+//     * @param int $country
+//     */
+//    public function setCountry($country)
+//    {
+//        $this->country = $country;
+//    }
 
 //    /**
 //     * @return int

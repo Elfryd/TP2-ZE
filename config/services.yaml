@@ -29,3 +29,12 @@ services:
         tags: ['controller.service_arguments']
     App\Entity\Player:
         public: true
+    App\AppEvent:
+        public: true
+    App\Subscriber\PlayerSubscriber:
+        arguments: ['@doctrine.orm.entity_manager']
+        autowire: true
+    app.player.event:
+        public: true
+        class: \App\Event\PlayerEvent
+

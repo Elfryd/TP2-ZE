@@ -8,8 +8,10 @@
 
 namespace App\Form;
 
+use App\AppEvent;
 use App\Entity\Player;
 use App\Entity\Item;
+use App\Subscriber\PlayerSubscriber;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -23,21 +25,40 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 
 
 class PlayerType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
+        /*$builder
             ->add('name', TextType::class)
             ->add('age', IntegerType::class)
             ->add('country', TextType::class)
-            ->add('save', SubmitType::class, array('label' => 'Créer'));
+            ->add('save', SubmitType::class, array('label' => 'Créer'));*/
+        $builder
+            ->add('name')
+            ->add('rolesPlayer')
+            ->addEventListener( FormEvents::PRE_SET_DATA,
+                array($this, 'preSetData') );
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         // FIXME: ajouter la configuration du form
+    }
+
+    public function preSetData(FormEvent $event) {
+        $player = $event->getData();
+        $form = $event->getForm();
+        if ($player->getId() !== null){
+            $form->remove('name');
+            $form->remove('roles');
+            $form->add('money');
+            $form->add('experience');
+        }
+        $form->add('save', SubmitType::class, array('label' => 'Créer'));
     }
 }

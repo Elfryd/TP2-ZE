@@ -10,6 +10,7 @@ namespace App\Controller;
 
 use App\Form\PlayerType;
 use App\Entity\Player;
+use App\AppEvent;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,10 +29,10 @@ class PlayerController extends Controller
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid())
         {
-            echo 'Ca a marché !!!';
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($player);
-            $em->flush();
+            $playerEvent = $this->get('app.player.event');
+            $playerEvent->setPlayer($player);
+            $dispatcher = $this->get('event_dispatcher');
+            $dispatcher->dispatch(AppEvent::PLAYER_ADD, $playerEvent);
             return $this->redirectToRoute('app_player_index');
         }
         return $this->render('player/player_new.html.twig',array('form' => $form->createView()));
@@ -47,10 +48,10 @@ class PlayerController extends Controller
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid())
         {
-            echo 'Ca a marché !!!';
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($player);
-            $em->flush();
+            $playerEvent = $this->get('app.player.event');
+            $playerEvent->setPlayer($player);
+            $dispatcher = $this->get('event_dispatcher');
+            $dispatcher->dispatch(AppEvent::PLAYER_EDIT, $playerEvent);
             return $this->redirectToRoute('app_player_index');
         }
         return $this->render('player/player_edit.html.twig',array('form' => $form->createView()));
