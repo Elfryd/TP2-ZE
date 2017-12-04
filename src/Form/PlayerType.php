@@ -53,12 +53,14 @@ class PlayerType extends AbstractType
     public function preSetData(FormEvent $event) {
         $player = $event->getData();
         $form = $event->getForm();
+        $label = 'Créer';
         if ($player->getId() !== null){
             $form->remove('name');
-            $form->remove('roles');
+            $form->remove('rolesPlayer');
             $form->add('money');
-            $form->add('experience');
+            $form->add('experiences');
+            $label = 'Mettre à jour';
         }
-        $form->add('save', SubmitType::class, array('label' => 'Créer'));
+        $form->add('save', SubmitType::class, array('label' => $label));
     }
 }
